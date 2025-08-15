@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtbisqh2m37lr"]
+
+[ext_resource type="PackedScene" uid="uid://rani05mmggo2" path="res://scenes/player_model.tscn" id="1_nutpw"]
+[ext_resource type="Script" uid="uid://ddxgivj5dlq5u" path="res://scripts/player_plane.gd" id="1_ympy2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nutpw"]
+size = Vector3(1, 2.3, 12.6)
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_ympy2")
+
+[node name="player" parent="." instance=ExtResource("1_nutpw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, 1.2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(11.89, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, -3.4)
+shape = SubResource("BoxShape3D_nutpw")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 1.83688e-15, 8.74228e-08, 4.37114e-08, 0.866025, 0.5, -7.57103e-08, 0.5, -0.866025, 0, 6.3, -13.8)
